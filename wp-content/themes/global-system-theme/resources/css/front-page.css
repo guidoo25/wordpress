@@ -1,0 +1,153 @@
+/* 
+ * Estilos adicionales para la página principal
+ * Complementa los estilos de Tailwind CSS
+ */
+
+/* Hero Section - Animaciones sutiles */
+.hero-section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botones - Efectos hover mejorados */
+.btn-primary,
+a.bg-indigo-600 {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover,
+a.bg-indigo-600:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(99, 91, 255, 0.4);
+}
+
+.btn-primary:active,
+a.bg-indigo-600:active {
+    transform: translateY(0);
+}
+
+/* Botones secundarios */
+.btn-secondary,
+a.border-indigo-200 {
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover,
+a.border-indigo-200:hover {
+    background-color: rgba(99, 91, 255, 0.05);
+    border-color: #635BFF;
+}
+
+/* Features Grid - Cards con efecto hover */
+.feature-card {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Highlight de texto */
+.text-highlight {
+    background: linear-gradient(120deg, #635BFF, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Secciones - Separadores suaves */
+section {
+    position: relative;
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, 
+        transparent, 
+        rgba(99, 91, 255, 0.1), 
+        transparent);
+}
+
+section:last-child::after {
+    display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    /* Hero Section en móvil */
+    .hero-section h1 {
+        animation: none;
+    }
+    
+    /* Botones a ancho completo en móvil */
+    a.flex.items-center.justify-center {
+        width: 100%;
+    }
+    
+    /* Features Grid - 1 columna en móvil */
+    .feature-card {
+        margin-bottom: 20px;
+    }
+    
+    /* Sombras más sutiles en móvil */
+    .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .btn-primary,
+    .btn-secondary,
+    .feature-card,
+    .hero-section {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .btn-primary,
+    .btn-secondary {
+        border: 1px solid #333;
+        color: #000 !important;
+        background: transparent !important;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+/* Dark Mode Support (opcional) */
+@media (prefers-color-scheme: dark) {
+    .feature-card {
+        background-color: #1f2937;
+        border-color: #374151;
+    }
+    
+    .feature-card:hover {
+        background-color: #111827;
+    }
+}

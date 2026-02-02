@@ -1,0 +1,54 @@
+/**
+ * Front Page Styles
+ * Global System GPS - WordPress Land Theme
+ */
+
+/* Custom Colors */
+:root {
+    --stripe-purple: #635bff;
+    --stripe-cyan: #00d4ff;
+    --stripe-pink: #ff80b5;
+    --stripe-dark: #0a2540;
+    --stripe-gray: #425466;
+    --stripe-light: #f6f9fc;
+}
+
+/* Tailwind Custom Colors */
+.bg-stripe-purple { background-color: var(--stripe-purple); }
+.bg-stripe-cyan { background-color: var(--stripe-cyan); }
+.bg-stripe-pink { background-color: var(--stripe-pink); }
+.bg-stripe-dark { background-color: var(--stripe-dark); }
+.bg-stripe-gray { background-color: var(--stripe-gray); }
+.bg-stripe-light { background-color: var(--stripe-light); }
+
+.text-stripe-purple { color: var(--stripe-purple); }
+.text-stripe-cyan { color: var(--stripe-cyan); }
+.text-stripe-pink { color: var(--stripe-pink); }
+.text-stripe-dark { color: var(--stripe-dark); }
+.text-stripe-gray { color: var(--stripe-gray); }
+
+.from-stripe-purple { --tw-gradient-from: var(--stripe-purple); }
+.via-stripe-purple { --tw-gradient-via: var(--stripe-purple); }
+.to-stripe-purple { --tw-gradient-to: var(--stripe-purple); }
+.from-stripe-cyan { --tw-gradient-from: var(--stripe-cyan); }
+.via-stripe-cyan { --tw-gradient-via: var(--stripe-cyan); }
+.to-stripe-cyan { --tw-gradient-to: var(--stripe-cyan); }
+.from-stripe-pink { --tw-gradient-from: var(--stripe-pink); }
+.to-stripe-pink { --tw-gradient-to: var(--stripe-pink); }
+
+.border-stripe-purple { border-color: var(--stripe-purple); }
+
+/* Hero Gradient */
+.hero-gradient {
+    background: linear-gradient(135deg, #f6f9fc 0%, #ffffff 50%, #f0f4f8 100%);
+}
+
+/* Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
